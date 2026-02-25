@@ -9,9 +9,43 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 - 🧮 Lean 4 formalization of mathematical concepts
 - 🔗 Connecting mathematical foundations to AI/ML applications
 
+## 📚 Learning Path
+
+### Phase 1: Lean 4 Basics (Current)
+> Mastering Lean 4 syntax and proof tactics
+
+| Order | File | Topics | Exercises |
+|-------|------|--------|-----------|
+| 1 | `MathStudies/Basics/HelloWorld.lean` | Basic syntax, functions, recursion | 3 problems |
+| 2 | `MathStudies/Basics/Types.lean` | Type system (Nat, Int, String, Bool) | 2 problems |
+| 3 | `MathStudies/Basics/Functions.lean` | Higher-order functions, List operations | 2 problems |
+| 4 | `MathStudies/Basics/Logic.lean` | Propositions, logical operators (∧, ∨, →) | 2 problems |
+| 5 | `MathStudies/Basics/Proofs.lean` | Theorems, tactics, induction | 3 problems |
+
+**How to study**: Read each file, run `#eval` examples, then solve exercises at the end.
+
+```bash
+# Build and see results
+cd Lean
+lake build MathStudies.Basics.HelloWorld
+```
+
+### Phase 2: Measure Theory (Upcoming)
+> Formalizing Tao's Measure Theory
+
+- Branch: `book/tao-measure-theory-ch1`
+- Topics: σ-algebras, Lebesgue measure, integration
+
+---
+
 ## Current Focus
 
-### Measure Theory
+### Phase 1: Lean 4 Basics
+- ✅ Setup complete (Lean 4.28.0, Lake 5.0.0)
+- ✅ Basic modules created
+- 🔄 Working through HelloWorld exercises
+
+### Phase 2: Measure Theory (Planned)
 - **Textbook**: Terence Tao, *An Introduction to Measure Theory* (GSM 126, 2012)
 - **Topics**:
   - σ-algebras
@@ -23,13 +57,19 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 ## Project Structure
 
 ```
-.
-├── lake.lean              # Lake package configuration
-├── MathStudies.lean       # Main entry point
-├── Mathlib/               # Local library files
-│   ├── MeasureTheory.lean # Measure theory formalization
-│   └── ...
-└── README.md
+Lean/
+├── lakefile.toml              # Lake package configuration
+├── MathStudies.lean           # Main library entry point
+├── MathStudies/
+│   ├── Basics/                # 📚 Lean 4 learning modules
+│   │   ├── HelloWorld.lean    # 1. Basic syntax & functions
+│   │   ├── Types.lean         # 2. Type system
+│   │   ├── Functions.lean     # 3. Functions & Lists
+│   │   ├── Logic.lean         # 4. Logic & propositions
+│   │   └── Proofs.lean        # 5. Theorems & proofs
+│   └── (Future: MeasureTheory/)
+├── Main.lean                  # Executable entry point
+└── README.md                  # This file
 ```
 
 ## Setup
@@ -43,37 +83,45 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 
 2. **Verify installation**:
    ```bash
-   lean --version
-   lake --version
+   lean --version   # Should show Lean 4.28.0
+   lake --version   # Should show Lake 5.0.0
    ```
 
 ### Building
 
 ```bash
-# Initialize Lean project (first time only)
-lake init MathStudies
+cd Lean
 
-# Build the project
+# Build entire project
 lake build
 
-# Run Lean REPL
-lake build
+# Build specific module
+lake build MathStudies.Basics.HelloWorld
+
+# Run examples (shown in build output)
 ```
 
 ## Learning Resources
 
-- [Mathematics in Lean](https://avigad.github.io/mathematics_in_lean/) - Lean 4 math tutorial
+- [Mathematics in Lean](https://avigad.github.io/mathematics_in_lean/) - Comprehensive Lean 4 math tutorial
 - [Lean 4 Documentation](https://leanprover.github.io/lean4/doc/)
-- [Lean Community Discord](https://discord.gg/leanprover)
+- [Lean Community Discord](https://discord.gg/leanprover) - Active community
 - [Mathlib4](https://github.com/leanprover-community/mathlib4) - Lean math library
 
 ## Progress
 
-- [ ] Lean 4 installation and setup
+### Phase 1: Lean 4 Basics
+- [x] Lean 4 installation and setup
+- [x] Basic learning modules created
+- [ ] HelloWorld exercises completed
+- [ ] All Basics modules completed
+
+### Phase 2: Measure Theory
 - [ ] σ-algebra definition in Lean
 - [ ] Measure space formalization
 - [ ] Lebesgue measure basics
-- [ ] Simple measurable functions
+- [ ] Measurable functions
+- [ ] Integration basics
 - [ ] Convergence theorems
 
 ## License
