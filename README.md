@@ -12,12 +12,20 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 ## 📚 Learning Path
 
 ### Phase 1: Lean 4 Basics (Current)
-> Mastering Lean 4 syntax and proof tactics
+> Mastering Lean 4 syntax and proof tactics following the official tutorial
 
-| Order | File | Topics | Exercises |
-|-------|------|--------|-----------|
-| 1 | `MathStudies/Basics/HelloWorld.lean` | Basic syntax, functions, recursion | 3 problems |
-| 2 | `MathStudies/Basics/Types.lean` | Type system (Nat, Int, String, Bool) | 2 problems |
+**Source**: [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/) by David Thrane Christiansen
+**License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+| Chapter | Section | File | Topics | Exercises |
+|---------|---------|------|--------|-----------|
+| 1 | 1.1 Evaluating Expressions | `MathStudies/Tutorials/FPInLean/Chapter01_01_EvaluatingExpressions.lean` | #eval, operators, function application, conditionals | 5 problems |
+| 1 | 1.2 Types | `MathStudies/Tutorials/FPInLean/Chapter01_02_Types.lean` | Type checking, #check | (upcoming) |
+| 1 | 1.3 Functions and Definitions | `MathStudies/Tutorials/FPInLean/Chapter01_03_FunctionsAndDefinitions.lean` | def, function syntax | (upcoming) |
+| 1 | 1.4 Structures | `MathStudies/Tutorials/FPInLean/Chapter01_04_Structures.lean` | structure, named fields | (upcoming) |
+| 1 | 1.5 Datatypes and Patterns | `MathStudies/Tutorials/FPInLean/Chapter01_05_DatatypesAndPatterns.lean` | inductive, pattern matching | (upcoming) |
+| 1 | 1.6 Polymorphism | `MathStudies/Tutorials/FPInLean/Chapter01_06_Polymorphism.lean` | Generic types | (upcoming) |
+| 1 | 1.7 Additional Conveniences | `MathStudies/Tutorials/FPInLean/Chapter01_07_AdditionalConveniences.lean` | let, @, parentheses | (upcoming) |
 | 3 | `MathStudies/Basics/Functions.lean` | Higher-order functions, List operations | 2 problems |
 | 4 | `MathStudies/Basics/Logic.lean` | Propositions, logical operators (∧, ∨, →) | 2 problems |
 | 5 | `MathStudies/Basics/Proofs.lean` | Theorems, tactics, induction | 3 problems |
