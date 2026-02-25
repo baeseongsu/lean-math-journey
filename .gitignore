@@ -1,0 +1,43 @@
+# Lean build artifacts
+.lake/
+*.olean
+*.ilean
+*.c
+*.o
+*.so
+*.a
+
+# Lean proof XML exports
+*.lean.proof.xml
+
+# Elan (Lean version manager)
+.elan/
+
+# Lake (Lean build tool)
+lake-manifest.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*~
+
+# Python (if using Python scripts for automation)
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Logs
+*.log
