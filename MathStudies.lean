@@ -3,4 +3,11 @@
 import MathStudies.Basic
 
 -- Import official Functional Programming in Lean tutorial
-import MathStudies.Tutorials.FPInLean.Chapter01_GettingToKnowLean
+-- Chapter 1: Getting to Know Lean
+import MathStudies.Tutorials.FPInLean.Chapter01_01_EvaluatingExpressions
+import MathStudies.Tutorials.FPInLean.Chapter01_02_Types
+import MathStudies.Tutorials.FPInLean.Chapter01_03_FunctionsAndDefinitions
+import MathStudies.Tutorials.FPInLean.Chapter01_04_Structures
+import MathStudies.Tutorials.FPInLean.Chapter01_05_DatatypesAndPatterns
+import MathStudies.Tutorials.FPInLean.Chapter01_06_Polymorphism
+import MathStudies.Tutorials.FPInLean.Chapter01_07_AdditionalConveniences
