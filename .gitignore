@@ -41,3 +41,4 @@ venv/
 
 # Logs
 *.log
+/.lake

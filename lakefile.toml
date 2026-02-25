@@ -1,0 +1,10 @@
+name = "MathStudies"
+version = "0.1.0"
+defaultTargets = ["mathstudies"]
+
+[[lean_lib]]
+name = "MathStudies"
+
+[[lean_exe]]
+name = "mathstudies"
+root = "Main"
