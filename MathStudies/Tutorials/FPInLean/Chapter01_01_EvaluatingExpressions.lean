@@ -9,7 +9,7 @@ https://lean-lang.org/functional_programming_in_lean/Getting-to-Know-Lean/Evalua
 Licensed under CC BY 4.0
 
 Lean is an interactive system.
-You can ask it to evaluate expressions using #eval.
+Use #eval to evaluate expressions and see results.
 -/
 
 -- ============================================================================
@@ -31,8 +31,8 @@ You can ask it to evaluate expressions using #eval.
 -- ============================================================================
 
 -- In Lean, function arguments are separated by spaces (not commas!)
--- Instead of: String.append("Hello, ", "Lean!")
--- We write:
+-- Instead of: String.append("Hello", "Lean!")
+-- Write:
 #eval String.append "Hello, " "Lean!"
 -- Expected: "Hello, Lean!"
 
@@ -50,28 +50,27 @@ You can ask it to evaluate expressions using #eval.
 -- Expected: "it is no"
 
 -- ============================================================================
--- Exercises
+-- Exercises from Official Tutorial
 -- ============================================================================
--- Work out the values by hand, then check with Lean
 
 -- Exercise 1: 42 + 19
--- Expected: 61
 #eval 42 + 19
+-- Expected: 61
 
 -- Exercise 2: String.append "A" (String.append "B" "C")
--- Expected: "ABC"
 #eval String.append "A" (String.append "B" "C")
+-- Expected: "ABC"
 
 -- Exercise 3: String.append (String.append "A" "B") "C"
--- Expected: "ABC"
 #eval String.append (String.append "A" "B") "C"
+-- Expected: "ABC"
 
 -- Exercise 4: if 3 == 3 then 5 else 7
--- Expected: 5
 #eval if 3 == 3 then 5 else 7
+-- Expected: 5
 
 -- Exercise 5: if 3 == 4 then "equal" else "not equal"
--- Expected: "not equal"
 #eval if 3 == 4 then "equal" else "not equal"
+-- Expected: "not equal"
 
 end Tutorials.FPInLean

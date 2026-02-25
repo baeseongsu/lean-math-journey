@@ -1,77 +1,64 @@
 namespace Tutorials.FPInLean
 
 /-
-# 1.2 Types (핵심만 정리)
+# 1.2 Types
 
-Lean에서 모든 표현식은 반드시 타입을 가집니다.
-타입은 실수를 막아주고 코드의 의도를 명확하게 해줍니다.
+Based on: Functional Programming in Lean
+https://lean-lang.org/functional_programming_in_lean/Getting-to-Know-Lean/Types/
 
-📚 핵심 커맨드: #check (타입 확인), #eval (계산)
+Licensed under CC BY 4.0
+
+Every Lean expression must have a type.
+Types classify values and prevent mistakes.
 -/
 
 -- ============================================================================
--- 1. 타입 확인: #check
+-- 1. Checking Types with #check
 -- ============================================================================
 
--- 표현식의 타입을 확인하고 싶을 때 #check 사용
+-- Use #check to see the type of an expression
 
-#check 42           -- 42 : Nat (자연수)
-#check -5           -- -5 : Int (정수, 음수 포함)
+#check 42           -- 42 : Nat (natural numbers)
+#check -5           -- -5 : Int (integers, includes negatives)
 #check "hello"      -- "hello" : String
 #check true         -- true : Bool
 
--- 함수도 타입이 있습니다
-#check Nat.succ     -- Nat → Nat (자연수를 받아 자연수 반환)
-#check String.append -- String → String → String
+-- Functions also have types
+#check Nat.succ     -- Nat.succ (n : Nat) : Nat
+#check String.append -- String.append (s : String) (t : String) : String
 
 -- ============================================================================
--- 2. 타입 명시하기
+-- 2. Explicit Type Annotations
 -- ============================================================================
 
--- 표현식 뒤에 : 타입 으로 명시
+-- Specify type using parentheses with colon: (expression : Type)
 
 #eval (1 + 2 : Nat)    -- 3
-#eval (1 - 2 : Nat)    -- 0 (Nat은 음수 없음!)
-#eval (1 - 2 : Int)    -- -1 (Int는 음수 가능)
+#eval (1 - 2 : Nat)    -- 0 (Nat has no negatives!)
+#eval (1 - 2 : Int)    -- -1
 
 -- ============================================================================
--- 3. Nat vs Int (중요!)
+-- 3. Nat vs Int (Important!)
 -- ============================================================================
 
--- Nat (자연수): 0, 1, 2, ... (음수 없음, 무한 정밀도)
+-- Nat (natural numbers): 0, 1, 2, ... (no negatives, arbitrary precision)
 #eval (5 - 3 : Nat)    -- 2
-#eval (3 - 5 : Nat)    -- 0 (음수는 0으로)
+#eval (3 - 5 : Nat)    -- 0 (clamps to 0 when negative)
 
--- Int (정수): ..., -2, -1, 0, 1, 2, ... (음수 가능)
+-- Int (integers): ..., -2, -1, 0, 1, 2, ... (includes negatives)
 #eval (3 - 5 : Int)    -- -2
 
 -- ============================================================================
--- 4. 타입 에러 예시
+-- 4. Type Errors
 -- ============================================================================
 
--- 타입이 맞지 않으면 에러 발생
--- (주석을 해제하면 에러 볼 수 있음)
-
--- #check String.append 123 "hello"
--- Error: expected String, got Nat
+-- Uncomment to see the error:
+-- #check String.append ["hello", " "] "world"
+-- Error: Application type mismatch
+-- The argument ["hello", " "] has type List String
+-- but is expected to have type String
 
 -- #eval 1 + "hello"
 -- Error: cannot add Nat and String
-
--- ============================================================================
--- 연습문제
--- ============================================================================
-
--- 문제 1: 다음의 타입은 무엇인가요?
--- #check 3.14
--- 정답: Float
-
--- 문제 2: Nat으로 음수 계산을 하면 어떻게 되나요?
--- #eval (10 - 15 : Nat)
--- 정답: 0
-
--- 문제 3: Int로 같은 계산을 하면?
--- #eval (10 - 15 : Int)
--- 정답: -5
 
 end Tutorials.FPInLean

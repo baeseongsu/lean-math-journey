@@ -31,12 +31,12 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 
 #### Key Concepts So Far
 
-- **`#eval`**: 표현식을 계산하고 결과 출력
-- **`#check`**: 표현식과 타입을 확인 (계산 안 함)
-- **`Nat` vs `Int`**: Nat는 음수 없음 (음수 계산 시 0 clamp), Int는 음수 가능
-- **`:=` vs `=`**: `:=`는 정의, `=`는 동등성
-- **함수 적용**: 공백으로 구분 (`f x y`)
-- **커링**: 모든 함수는 사실 인자 하나만 받음
+- **`#eval`**: Evaluate expressions and show results
+- **`#check`**: Check types without evaluation
+- **`Nat` vs `Int`**: Nat has no negatives (clamps to 0), Int supports negatives
+- **`:=` vs `=`**: `:=` is for definition, `=` is for equality
+- **Function application**: Use spaces to separate arguments (`f x y`)
+- **Currying**: All functions actually take just one argument
 
 ### Phase 2: Measure Theory (Upcoming)
 > Formalizing Tao's Measure Theory
