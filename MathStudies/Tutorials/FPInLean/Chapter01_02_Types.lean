@@ -1,29 +1,77 @@
 namespace Tutorials.FPInLean
 
 /-
-# 1.2 Types
+# 1.2 Types (핵심만 정리)
 
-Every Lean expression has a type.
-Use #check to see the type of an expression.
+Lean에서 모든 표현식은 반드시 타입을 가집니다.
+타입은 실수를 막아주고 코드의 의도를 명확하게 해줍니다.
+
+📚 핵심 커맨드: #check (타입 확인), #eval (계산)
 -/
 
--- Checking types
-#check 1        -- Nat (natural number)
-#check "Hello"  -- String
+-- ============================================================================
+-- 1. 타입 확인: #check
+-- ============================================================================
 
--- Variables with explicit types
-def x : Nat := 5
-#check x
+-- 표현식의 타입을 확인하고 싶을 때 #check 사용
 
-def greeting : String := "Hello"
-#check greeting
+#check 42           -- 42 : Nat (자연수)
+#check -5           -- -5 : Int (정수, 음수 포함)
+#check "hello"      -- "hello" : String
+#check true         -- true : Bool
 
--- Functions have types too
-#check Nat.succ      -- Nat → Nat
-#check String.append  -- String → String → String
+-- 함수도 타입이 있습니다
+#check Nat.succ     -- Nat → Nat (자연수를 받아 자연수 반환)
+#check String.append -- String → String → String
 
--- Exercise: Check the type of these expressions
--- #check 1 + 2
--- #check (1, 2)
+-- ============================================================================
+-- 2. 타입 명시하기
+-- ============================================================================
+
+-- 표현식 뒤에 : 타입 으로 명시
+
+#eval (1 + 2 : Nat)    -- 3
+#eval (1 - 2 : Nat)    -- 0 (Nat은 음수 없음!)
+#eval (1 - 2 : Int)    -- -1 (Int는 음수 가능)
+
+-- ============================================================================
+-- 3. Nat vs Int (중요!)
+-- ============================================================================
+
+-- Nat (자연수): 0, 1, 2, ... (음수 없음, 무한 정밀도)
+#eval (5 - 3 : Nat)    -- 2
+#eval (3 - 5 : Nat)    -- 0 (음수는 0으로)
+
+-- Int (정수): ..., -2, -1, 0, 1, 2, ... (음수 가능)
+#eval (3 - 5 : Int)    -- -2
+
+-- ============================================================================
+-- 4. 타입 에러 예시
+-- ============================================================================
+
+-- 타입이 맞지 않으면 에러 발생
+-- (주석을 해제하면 에러 볼 수 있음)
+
+-- #check String.append 123 "hello"
+-- Error: expected String, got Nat
+
+-- #eval 1 + "hello"
+-- Error: cannot add Nat and String
+
+-- ============================================================================
+-- 연습문제
+-- ============================================================================
+
+-- 문제 1: 다음의 타입은 무엇인가요?
+-- #check 3.14
+-- 정답: Float
+
+-- 문제 2: Nat으로 음수 계산을 하면 어떻게 되나요?
+-- #eval (10 - 15 : Nat)
+-- 정답: 0
+
+-- 문제 3: Int로 같은 계산을 하면?
+-- #eval (10 - 15 : Int)
+-- 정답: -5
 
 end Tutorials.FPInLean

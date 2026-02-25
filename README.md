@@ -17,26 +17,26 @@ This repository tracks my journey learning mathematics by formalizing concepts a
 **Source**: [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/) by David Thrane Christiansen
 **License**: Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-| Chapter | Section | File | Topics | Exercises |
-|---------|---------|------|--------|-----------|
-| 1 | 1.1 Evaluating Expressions | `MathStudies/Tutorials/FPInLean/Chapter01_01_EvaluatingExpressions.lean` | #eval, operators, function application, conditionals | 5 problems |
-| 1 | 1.2 Types | `MathStudies/Tutorials/FPInLean/Chapter01_02_Types.lean` | Type checking, #check | (upcoming) |
-| 1 | 1.3 Functions and Definitions | `MathStudies/Tutorials/FPInLean/Chapter01_03_FunctionsAndDefinitions.lean` | def, function syntax | (upcoming) |
-| 1 | 1.4 Structures | `MathStudies/Tutorials/FPInLean/Chapter01_04_Structures.lean` | structure, named fields | (upcoming) |
-| 1 | 1.5 Datatypes and Patterns | `MathStudies/Tutorials/FPInLean/Chapter01_05_DatatypesAndPatterns.lean` | inductive, pattern matching | (upcoming) |
-| 1 | 1.6 Polymorphism | `MathStudies/Tutorials/FPInLean/Chapter01_06_Polymorphism.lean` | Generic types | (upcoming) |
-| 1 | 1.7 Additional Conveniences | `MathStudies/Tutorials/FPInLean/Chapter01_07_AdditionalConveniences.lean` | let, @, parentheses | (upcoming) |
-| 3 | `MathStudies/Basics/Functions.lean` | Higher-order functions, List operations | 2 problems |
-| 4 | `MathStudies/Basics/Logic.lean` | Propositions, logical operators (∧, ∨, →) | 2 problems |
-| 5 | `MathStudies/Basics/Proofs.lean` | Theorems, tactics, induction | 3 problems |
+#### Progress: Chapter 1 - Getting to Know Lean
 
-**How to study**: Read each file, run `#eval` examples, then solve exercises at the end.
+| Section | Topics | Key Concepts | Status | File |
+|---------|--------|--------------|--------|------|
+| 1.1 [Evaluating Expressions](https://lean-lang.org/functional_programming_in_lean/Getting-to-Know-Lean/Evaluating-Expressions/) | `#eval`, operators, function application, conditionals | Operator precedence, currying basics | ✅ Complete | `Chapter01_01_EvaluatingExpressions.lean` |
+| 1.2 [Types](https://lean-lang.org/functional_programming_in_lean/Getting-to-Know-Lean/Types/) | `#check`, type annotations, Nat vs Int | Type inference, type errors | ✅ Complete | `Chapter01_02_Types.lean` |
+| 1.3 [Functions and Definitions](https://lean-lang.org/functional_programming_in_lean/Getting-to-Know-Lean/Functions-and-Definitions/) | `def`, function syntax, currying | `:=` vs `=`, function types | 🔄 In Progress | `Chapter01_03_FunctionsAndDefinitions.lean` |
+| 1.4 Structures | `structure`, named fields | | ⏳ Upcoming | `Chapter01_04_Structures.lean` |
+| 1.5 Datatypes and Patterns | `inductive`, pattern matching | | ⏳ Upcoming | `Chapter01_05_DatatypesAndPatterns.lean` |
+| 1.6 Polymorphism | Generic types | | ⏳ Upcoming | `Chapter01_06_Polymorphism.lean` |
+| 1.7 Additional Conveniences | `let`, `@`, parentheses | | ⏳ Upcoming | `Chapter01_07_AdditionalConveniences.lean` |
 
-```bash
-# Build and see results
-cd Lean
-lake build MathStudies.Basics.HelloWorld
-```
+#### Key Concepts So Far
+
+- **`#eval`**: 표현식을 계산하고 결과 출력
+- **`#check`**: 표현식과 타입을 확인 (계산 안 함)
+- **`Nat` vs `Int`**: Nat는 음수 없음 (음수 계산 시 0 clamp), Int는 음수 가능
+- **`:=` vs `=`**: `:=`는 정의, `=`는 동등성
+- **함수 적용**: 공백으로 구분 (`f x y`)
+- **커링**: 모든 함수는 사실 인자 하나만 받음
 
 ### Phase 2: Measure Theory (Upcoming)
 > Formalizing Tao's Measure Theory
