@@ -132,7 +132,7 @@ def isOne (n : Nat) : Bool :=
   match n with
   | Nat.zero => false
   | Nat.succ Nat.zero => true
-  | Nat.succ k => false
+  | Nat.succ _ => false  -- _ (wildcard) instead of k to avoid linter warning
 
 #eval isOne 0     -- false
 #eval isOne 1     -- true
@@ -155,7 +155,7 @@ def isTwoOrMore (n : Nat) : Bool :=
   match n with
   | Nat.zero => false
   | Nat.succ Nat.zero => false
-  | Nat.succ k => true
+  | Nat.succ _ => true  -- _ (wildcard) instead of k to avoid linter warning
 
 #eval isTwoOrMore 0     -- false
 #eval isTwoOrMore 1     -- false
@@ -177,7 +177,7 @@ def fib (n : Nat) : Nat :=
   match n with
   | Nat.zero => 0                                    -- fib 0 = 0
   | Nat.succ Nat.zero => 1                          -- fib 1 = 1
-  | Nat.succ (Nat.succ k) => (fib Nat.succ k) + (fib k)  -- fib (k+2) = fib(k+1) + fib(k)
+  | Nat.succ (Nat.succ k) => fib (Nat.succ k) + fib k  -- fib (k+2) = fib(k+1) + fib(k)
 
 #eval fib 0    -- 0
 #eval fib 1    -- 1
